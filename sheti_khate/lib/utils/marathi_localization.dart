@@ -1,7 +1,10 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 class MarathiLocalizations {
-  static const Map<String, String> _localizedStrings = {
+  static const LocalizationsDelegate<dynamic> delegate = _MarathiLocalizationsDelegate();
+
+  static Map<String, String> mr_IN = {
     'app_title': 'शेती खाते',
     'home': 'मुख्य पृष्ठ',
     'expenses': 'खर्च',
@@ -39,25 +42,17 @@ class MarathiLocalizations {
     'expected_yield': 'अपेक्षित उत्पादन',
     'harvest_date': 'काढपाची तारीख',
   };
-
-  static const LocalizationsDelegate<MarathiLocalizations> delegate = 
-      _MarathiLocalizationsDelegate();
-
-  String translate(String key) {
-    return _localizedStrings[key] ?? key;
-  }
 }
 
-class _MarathiLocalizationsDelegate 
-    extends LocalizationsDelegate<MarathiLocalizations> {
+class _MarathiLocalizationsDelegate extends LocalizationsDelegate<dynamic> {
   const _MarathiLocalizationsDelegate();
 
   @override
   bool isSupported(Locale locale) => locale.languageCode == 'mr';
 
   @override
-  Future<MarathiLocalizations> load(Locale locale) async {
-    return MarathiLocalizations();
+  Future<dynamic> load(Locale locale) {
+    return SynchronousFuture<dynamic>(MarathiLocalizations.mr_IN);
   }
 
   @override
