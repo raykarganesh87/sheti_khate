@@ -29,50 +29,22 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = MarathiLocalizations.delegate.currentLocalized(context);
-    
     return Scaffold(
       appBar: AppBar(
-        title: Text(localizations.translate('app_title')!, style: const TextStyle(fontSize: 20)),
-        backgroundColor: AppColors.primary,
-        foregroundColor: Colors.white,
+        title: const Text('शेती खाते'),
       ),
       body: _screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.monetization_on),
-            label: localizations.translate('expenses'),
-          ),
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.construction),
-            label: localizations.translate('equipment'),
-          ),
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.local_florist),
-            label: localizations.translate('chemicals'),
-          ),
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.agriculture),
-            label: localizations.translate('crops'),
-          ),
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.bar_chart),
-            label: localizations.translate('reports'),
-          ),
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.settings),
-            label: localizations.translate('settings'),
-          ),
-        ],
         currentIndex: _selectedIndex,
-        selectedItemColor: AppColors.primary,
-        unselectedItemColor: Colors.grey,
-        onTap: (index) {
-          setState(() {
-            _selectedIndex = index;
-          });
-        },
+        onTap: (index) => setState(() => _selectedIndex = index),
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.money), label: 'खर्च'),
+          BottomNavigationBarItem(icon: Icon(Icons.build), label: 'साधने'),
+          BottomNavigationBarItem(icon: Icon(Icons.science), label: 'रासायनिक'),
+          BottomNavigationBarItem(icon: Icon(Icons.agriculture), label: 'पिके'),
+          BottomNavigationBarItem(icon: Icon(Icons.bar_chart), label: 'अहवाल'),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'सेटिंग्ज'),
+        ],
       ),
     );
   }
