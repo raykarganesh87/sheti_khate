@@ -23,5 +23,14 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  
   assets:
     - assets/translations/
+    - assets/fonts/
+  
+  fonts:
+    - family: NotoSansDevanagari
+      fonts:
+        - asset: assets/fonts/NotoSansDevanagari-Regular.ttf
+        - asset: assets/fonts/NotoSansDevanagari-Bold.ttf
+          weight: 700
