@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const Color primary = Color(0xFF2E7D32);
-  static const Color primaryLight = Color(0xFF60AD5E);
-  static const Color primaryDark = Color(0xFF005005);
-  static const Color accent = Color(0xFFFF9800);
-  static const Color background = Color(0xFFF5F5F5);
-  static const Color cardBackground = Colors.white;
+  static const Color primaryGreen = Color(0xFF2E7D32);
+  static const Color accentGreen = Color(0xFF43A047);
+  static const Color lightGreen = Color(0xFFC8E6C9);
+  static const Color white = Colors.white;
+  static const Color black = Colors.black;
+  static const Color grey = Colors.grey;
 }
 
-class AppConstants {
-  static const String dbName = 'sheti_khate.db';
+class AppTexts {
+  static const String appTitle = 'शेती खाते';
+  static const String appSubtitle = 'शेतकरी व्यवस्थापन अनुप्रयोग';
+}
+
+class AppSizes {
   static const double defaultPadding = 16.0;
-  static const double defaultMargin = 16.0;
+  static const double defaultBorderRadius = 8.0;
 }
