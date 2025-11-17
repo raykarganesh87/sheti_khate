@@ -33,7 +33,7 @@ class Expense {
       date: DateTime.fromMillisecondsSinceEpoch(map['date']),
       amount: map['amount'],
       category: map['category'],
-      description: map['description'],
+      description: map['description'] ?? '',
     );
   }
 }
